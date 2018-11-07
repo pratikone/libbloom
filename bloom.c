@@ -26,7 +26,6 @@
 #define MAKESTRING(n) STRING(n)
 #define STRING(n) #n
 
-
 inline static int test_bit_set_bit(unsigned char * buf,
                                    unsigned int x, int set_bit)
 {
@@ -67,10 +66,10 @@ static int bloom_check_add(struct bloom * bloom,
   }
 
   if (hits == bloom->hashes) {
-    return 1;                // 1 == element already in (or collision)
+    return FAILURE;                // 1 == element already in (or collision)
   }
 
-  return 0;
+  return SUCCESS;
 }
 
 

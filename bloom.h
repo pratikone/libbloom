@@ -12,6 +12,8 @@
 extern "C" {
 #endif
 
+#define SUCCESS 0
+#define FAILURE 1
 
 /** ***************************************************************************
  * Structure to keep track of one bloom filter.  Caller needs to
@@ -37,7 +39,6 @@ struct bloom
   unsigned char * bf;
   int ready;
 };
-
 
 /** ***************************************************************************
  * Initialize the bloom filter for use.
