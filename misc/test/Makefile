@@ -11,9 +11,10 @@ CFLAGS = -Wall -Wextra -Werror
 RM = /bin/rm -rf
 
 
-all : build
-
-build : $(SRC) $(BUILD)/$(LIBFILE)
+all : dynamic_build
+static_build : $(SRC) $(BUILD)/$(LIBFILE)
+	$(CC) -I$(ROOT) -L$(BUILD) $(SRC) -o $(NAME) $(BUILD)/$(LIBFILE) -lm	
+dynamic_build : $(SRC) $(BUILD)/$(LIBFILE)
 	$(CC) -I$(ROOT) -L$(BUILD) -l$(LIB) $(SRC) -o $(NAME) -Wl,-rpath,$(BUILD)
 
 clean:
