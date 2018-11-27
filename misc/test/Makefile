@@ -21,3 +21,8 @@ clean:
 	$(RM) $(NAME)
 
 #gcc -I../.. -L../../build -o basic basic.c -lbloom -Wl,-rpath,../../build
+
+# number of lines in final executable
+# objdump -dr basic | wc -l
+# static build  : 714
+# dynamic build : 389
